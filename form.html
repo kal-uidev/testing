@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Html form validation</title>
+</head>
+<body>
+    <form name='form1' onsubmit = 'return handleSubmit()'>
+        <label for="name">Name:</label>
+        <input id='name' type="text" placeholder="Enter name..." required>
+        <label for="email">Email:</label>
+        <input id='email' type="email" placeholder="Enter email..." required>
+        <button type='submit'>Submit</button>
+        <button type='reset'>Reset</button>
+    </form>
+    
+    <script>
+        function handleSubmit(){
+            const name = document.forms['form1']['name'].value;
+            const email = document.forms['form1']['email'].value;
+            alert(`Name is ${name} and Email is ${email}`)
+            return false;
+        }
+    </script>
+</body>
+</html>
